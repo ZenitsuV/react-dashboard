@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova, Verdana';
+  font-weight: normal;
+}
+
+/* Top nav bar*/
+.topNavBar {
+  background-color: #1d216a;
+  height: 60px;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+}
+
+.logo img {
+  height: 60px;
+  width: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.topNavBar_content {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0px;
+  left: 195px;
+}
+
+.report_name {
+  padding: 20px;
+  font-size: 19px;
+  font-weight: bold;
+  flex: 1;
+}
+
+.username,
+.export,
+.settings {
+  margin: 0px 10px;
+}
+
+.export img {
+  height: 35px;
+  width: 35px;
+  background-size: contain;
+}
+
+.settings img {
+  height: 35px;
+  width: 35px;
+  background-size: contain;
+}
+
+/* Side bar */
+
+.sideNavBar {
+  position: absolute;
+  background-color: #1d216a;
+  width: 85px;
+  color: #ffffff;
+  height: calc(100% - 60px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.side_report_list {
+  text-align: center;
+  height: 80px;
+  margin: 10px 10px;
+  font-size: 13px;
+}
+
+.side_report_icon {
+  height: 50px;
+  width: 50px;
+  background-size: contain;
+}
+
+.side_report_name {
+  font-family: Verdana;
+  font-size: 12px;
+}
+
+.report_container {
+  position: absolute;
+  left: 85px;
+  width: calc(100% - 85px);
+  height: calc(100% - 60px);
+  background-color: #eeeeee;
+}
