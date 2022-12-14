@@ -14,6 +14,7 @@ export default function App() {
       <Sidenav></Sidenav>
       <main>
         <Routes>
+          <Route path="*" element={<Summary />} />
           <Route path="/summary" element={<Summary />} />
           <Route path="/tracker" element={<Tracker />} />
           <Route path="/profile" element={<Profile />} />

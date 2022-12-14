@@ -5,7 +5,10 @@ const Sidenav = () => {
   return (
     <div className="sideNavBar">
       <div className="side_report_list">
-        <NavLink to="/summary">
+        <NavLink
+          to="/summary"
+          style={{ textDecoration: 'none', color: 'white' }}
+        >
           <img
             className="side_report_icon"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDP_KeajX_tbBNKtDejLn7-EoT3VQ74FyK-g&usqp=CAU"
@@ -15,7 +18,10 @@ const Sidenav = () => {
         </NavLink>
       </div>
       <div className="side_report_list">
-        <NavLink to="/tracker">
+        <NavLink
+          to="/tracker"
+          style={{ textDecoration: 'none', color: 'white' }}
+        >
           <img
             className="side_report_icon"
             src="https://www.clipartmax.com/png/middle/98-982659_disadvantaged-enterprises-summary-icon-png-white.png"
@@ -25,7 +31,10 @@ const Sidenav = () => {
         </NavLink>
       </div>
       <div className="side_report_list">
-        <NavLink to="/profile">
+        <NavLink
+          to="/profile"
+          style={{ textDecoration: 'none', color: 'white' }}
+        >
           <img
             className="side_report_icon"
             src="https://www.clipartmax.com/png/middle/98-982659_disadvantaged-enterprises-summary-icon-png-white.png"
