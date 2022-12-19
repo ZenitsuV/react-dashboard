@@ -1,0 +1,123 @@
+.report_container {
+  font-family: 'Verdana, Helvetica, Arial, sans-serif';
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 10px;
+}
+section {
+  margin: 5px 0;
+}
+.top_section {
+  height: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin-top: 0 !important;
+}
+
+.header_panel {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Date_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.DataasofDateText {
+  flex: 1;
+  text-align: right;
+  color: #595959;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.filter_container {
+  flex: 1;
+  display: flex;
+}
+
+.filter_wrapper {
+  display: flex;
+  flex-flow: row;
+  flex: 1;
+}
+
+.filter_text {
+  font-size: 15px;
+}
+
+.market_filter {
+  margin: 0 20px 0 10px;
+}
+
+.market_filter select {
+  width: 150px;
+}
+
+.period_toggle ul {
+  display: flex;
+  list-style: none;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px 1px rgb(199 199 199 / 62%);
+  height: 25px;
+}
+
+.period_toggle ul li {
+  color: #999999;
+  font-size: 14px;
+  text-align: center;
+  background-color: #f8f9fb;
+  height: 25px;
+  border-left: 1px solid #d9d9d9;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 26px;
+}
+
+.kpi_section_outer_container {
+  display: flex;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.kpi_section_inner_container {
+  border-radius: 5px;
+  border: solid 1px #d9d9d9;
+  box-shadow: 2px 3px 5px 1px rgb(199 199 199 / 62%);
+  background-color: #ffffff;
+  flex: 1;
+}
+
+.section_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section_heading_text {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.section_heading_text span {
+  color: #000000;
+  padding-left: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.kpi_wrapper {
+  display: flex;
+  margin-left: 5px;
+}

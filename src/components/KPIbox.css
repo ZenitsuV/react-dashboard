@@ -1,0 +1,98 @@
+.UnSelectedKPI {
+  cursor: pointer;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  width: 120px;
+  height: 110px;
+  border: 1px solid #c7c7c7;
+  border-radius: 5px;
+  margin-right: 5px !important;
+  -webkit-border-radius: 5px;
+}
+
+.UnSelectedKPI * {
+  padding: 0;
+  margin: 0;
+}
+
+.SelectedKPI {
+  width: 120px;
+  height: 110px;
+  border: 1px solid #758a9b;
+  background: linear-gradient(to bottom, #f9feff, #d0f4ff);
+}
+
+.Summary_KPI_text1 {
+  position: relative;
+  white-space: normal;
+  top: 10px;
+  font-family: 'Proxima Nova';
+  font-size: 12px;
+  font-weight: bold;
+  color: #7e7f80;
+  text-align: center;
+}
+
+.Summary_Alerts_text1 {
+  font-family: 'Proxima Nova';
+  font-weight: bold;
+  color: #638fc5;
+  font-size: 14px;
+  height: 40px;
+  text-align: Center;
+  padding-top: 1px !important;
+  line-height: 40px;
+}
+
+.Summary_KPI1_PrevTimePeriod {
+  font-size: 9pt;
+  color: #9d9e9e;
+}
+.Summary_KPI_PrevTimePeriod_L {
+  font-family: 'Proxima Nova';
+  font-size: 9pt;
+  color: #9d9e9e;
+  padding-top: 3px;
+  text-align: center;
+}
+.Summary_IndicatorGreen {
+  background-image: url('img/RSM_green.png');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: 15px 15px;
+}
+.Summary_IndicatorRed {
+  background-image: url('img/RSM_red.png');
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+  width: 20px;
+  height: 20px;
+}
+.Summary_IndicatorNull {
+  background-image: url('img/RSM_equal.png');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: 15px 15px;
+}
+
+.Summary_Change_Value {
+  text-align: center;
+  padding-left: 5px;
+  white-space: nowrap;
+  color: #717171;
+  font-family: 'Proxima Nova';
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.Summary_Hroller {
+  padding: 0;
+  margin: 0 auto;
+  border: none;
+  background: #bfbfbf;
+  width: 80%;
+  height: 1px;
+}
