@@ -57,7 +57,7 @@ section {
   width: 150px;
 }
 
-.period_toggle ul {
+.ts_performance_trend ul {
   display: flex;
   list-style: none;
   border-top: 1px solid #d9d9d9;
@@ -67,7 +67,7 @@ section {
   height: 25px;
 }
 
-.period_toggle ul li {
+.ts_performance_trend ul li {
   color: #999999;
   font-size: 14px;
   text-align: center;
@@ -112,7 +112,7 @@ section {
   flex: 1;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -120,4 +120,36 @@ section {
 .kpi_wrapper {
   display: flex;
   margin-left: 5px;
+}
+
+.ts_performance_trend {
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 5px;
+  border: solid 1px #d9d9d9;
+  box-shadow: 2px 3px 5px 1px rgba(199, 199, 199, 0.62);
+  background-color: #ffffff;
+  flex: 1;
+}
+
+.ts_pt_header {
+  display: flex;
+  align-items: center;
+}
+
+.RSM_HeaderText {
+  color: #000000;
+  padding-left: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.RSM_topN_wrapper {
+  display: flex;
+  gap: 10px;
+  /*flex: 1;*/
 }

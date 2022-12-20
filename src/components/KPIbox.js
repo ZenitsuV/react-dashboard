@@ -1,24 +1,42 @@
 import React from 'react';
 import './KPIbox.css';
 
-const KPIbox = () => {
+const KPIbox = ({
+  KPIId,
+  KPIFor,
+  metricValue,
+  changeValue,
+  growthValue,
+  growthIcon,
+  isSelected,
+  onSet,
+}) => {
+  const onSelectHandler = () => {
+    onSet(KPIFor);
+  };
+
   return (
-    <section class="UnSelectedKPI" id="Summary_KPI_TRx" valueGet="TRx">
-      <p id="Summary_Vyvanse_KPI1_Header" class="Summary_KPI_text1">
-        TRx
+    <section
+      className={`${isSelected === 'True' ? 'SelectedKPI' : 'UnSelectedKPI'}`}
+      id={`Summary_KPI_${KPIId}`}
+      valueGet={KPIFor}
+      onClick={onSelectHandler}
+    >
+      <p id="Summary_Vyvanse_KPI1_Header" className="Summary_KPI_text1">
+        {KPIFor}
       </p>
-      <h2 id="Summary_Vyvanse_KPI1_Vol" class="Summary_Alerts_text1">
-        42400
+      <h2 id="Summary_Vyvanse_KPI1_Vol" className="Summary_Alerts_text1">
+        {metricValue}
       </h2>
-      <hr class="Summary_Hroller" />
-      <p class="Summary_KPI_PrevTimePeriod_L">vs. PW</p>
-      <div class="Summary_PreviousWrapper">
+      <hr className="Summary_Hroller" />
+      <p className="Summary_KPI_PrevTimePeriod_L">vs. Prior</p>
+      <div className="Summary_PreviousWrapper">
         <div
           id="Summary_Vyvanse_KPI1_GrowthImg"
-          class="Summary_IndicatorNull"
+          className={`Summary_Indicator${growthIcon}`}
         ></div>
-        <p id="Summary_Vyvanse_KPI1_Growth" class="Summary_Change_Value">
-          0.0% (0)
+        <p id="Summary_Vyvanse_KPI1_Growth" className="Summary_Change_Value">
+          {`${growthValue} (${changeValue})`}
         </p>
       </div>
     </section>

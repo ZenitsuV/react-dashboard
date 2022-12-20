@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Summary.css';
+import PeriodToggle from '../components/PeriodToggle';
 import KPIbox from '../components/KPIbox';
 
 const Summary = () => {
+  const [selectedKPI, setSelectedKPI] = useState('TRx');
+
+  console.log(selectedKPI);
+
   return (
     <div className="report_container">
       <section className="top_section">
@@ -17,46 +22,7 @@ const Summary = () => {
               </div>
               <div className="pop_up_filter">Filter</div>
             </div>
-            <div className="period_toggle">
-              <ul style={{ width: '253px', height: '25px' }}>
-                <li
-                  class="SummaryTime TimeToggle"
-                  valueGet="C01W"
-                  id="SummaryTimeC01W{{id}}"
-                  style={{
-                    borderTopLeftradius: '5px',
-                    borderBottomLeftRadius: '5px',
-                  }}
-                >
-                  CW
-                </li>
-                <li
-                  class="SummaryTime TimeToggle"
-                  valueGet="C04W"
-                  id="SummaryTimeC04W{{id}}"
-                >
-                  C4W
-                </li>
-                <li
-                  class="SummaryTime TimeToggle"
-                  valueGet="C13W"
-                  id="SummaryTimeC13W{{id}}"
-                >
-                  C13W
-                </li>
-                <li
-                  class="SummaryTime TimeToggle"
-                  valueGet="CQTD"
-                  id="SummaryTimeCQTD{{id}}"
-                  style={{
-                    borderTopRightRadius: '5px',
-                    borderBottomRightRadius: '5px',
-                  }}
-                >
-                  QTD
-                </li>
-              </ul>
-            </div>
+            <PeriodToggle />
           </div>
         </div>
         <div className="Date_wrapper">
@@ -75,10 +41,166 @@ const Summary = () => {
           </div>
           <section className="kpi_inner">
             <div className="kpi_wrapper">
-              <KPIbox />
+              <KPIbox
+                KPIId="TRx"
+                KPIFor="TRx"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Green"
+                isSelected={`${selectedKPI == 'TRx' ? 'True' : 'False'}`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="TRx_Share"
+                KPIFor="TRx Share"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Green"
+                isSelected={`${selectedKPI == 'TRx Share' ? 'True' : 'False'}`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="NRx"
+                KPIFor="NRx"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Null"
+                isSelected={`${selectedKPI == 'NRx' ? 'True' : 'False'}`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="NRx_Share"
+                KPIFor="NRx Share"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Red"
+                isSelected={`${selectedKPI == 'NRx Share' ? 'True' : 'False'}`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="Total_Calls"
+                KPIFor="Total Calls"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Green"
+                isSelected={`${
+                  selectedKPI == 'Total Calls' ? 'True' : 'False'
+                }`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="Reach"
+                KPIFor="% Reach"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Red"
+                isSelected={`${selectedKPI == '% Reach' ? 'True' : 'False'}`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="Total_Writers"
+                KPIFor="Total Writers"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Green"
+                isSelected={`${
+                  selectedKPI == 'Total Writers' ? 'True' : 'False'
+                }`}
+                onSet={setSelectedKPI}
+              />
+              <KPIbox
+                KPIId="Samples"
+                KPIFor="Samples"
+                metricValue="41400"
+                currentPeriod="CW"
+                previousPeriod="PW"
+                changeValue="0"
+                growthValue="0.0%"
+                growthIcon="Green"
+                isSelected={`${selectedKPI == 'Samples' ? 'True' : 'False'}`}
+                onSet={setSelectedKPI}
+              />
             </div>
           </section>
         </section>
+      </section>
+
+      <section id="performance_trend" class="ts_performance_trend">
+        <div class="ts_pt_header">
+          <span class="RSM_HeaderText" id="Summary_Chart_Header">
+            {`Competitive Trend - ${selectedKPI}`}
+          </span>
+
+          <ul style={{ margin: '5px 10px 0 10px' }}>
+            <li
+              class="Summary_PlotName"
+              style={{
+                borderTopLeftRadius: '5px',
+                borderBottomLeftRadius: '5px',
+              }}
+              valueGet="Rollup"
+              id="SummaryRollupToggle{{id}}"
+            >
+              Rollup
+            </li>
+            <li
+              class="Summary_PlotName"
+              style={{
+                borderTopTightRadius: '5px',
+                borderBottomRightRadius: '5px',
+              }}
+              valueGet="Family"
+              id="SummaryFamilyToggle{{id}}"
+            >
+              Family
+            </li>
+          </ul>
+          <div style={{ margin: '5px 10px 0 0' }}>
+            <div
+              id="Summary_PerformanceChartMax"
+              class="Summary_Minimize_Black"
+            ></div>
+            <div
+              id="Summary_PerformanceChartMin"
+              class="Summary_Maximize_Black"
+              style={{ display: 'none' }}
+            ></div>
+          </div>
+          <div style={{ margin: '5px 10px 0 0' }}>
+            <div
+              id="rsm_ChartIcon2"
+              valueGet="Chart"
+              class="VisualType rsm_ChartIcon"
+            ></div>
+            <div
+              id="rsm_GridIcon2"
+              valueGet="Grid"
+              style={{ display: 'none' }}
+              class="VisualType rsm_GridIcon"
+            ></div>
+          </div>
+        </div>
       </section>
     </div>
   );

@@ -1,0 +1,24 @@
+.period_toggle ul {
+  display: flex;
+  list-style: none;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px 1px rgb(199 199 199 / 62%);
+  height: 25px;
+}
+
+.ts_performance_trend ul li,
+.period_toggle ul li {
+  color: #999999;
+  font-size: 14px;
+  text-align: center;
+  background-color: #f8f9fb;
+  height: 25px;
+  border-left: 1px solid #d9d9d9;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 26px;
+}
