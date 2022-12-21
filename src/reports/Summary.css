@@ -153,3 +153,13 @@ section {
   gap: 10px;
   /*flex: 1;*/
 }
+
+.Summary_TrendChart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 10px;
+  min-height: 150px;
+  flex: 1;
+}

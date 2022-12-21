@@ -22,3 +22,20 @@
   justify-content: center;
   line-height: 26px;
 }
+
+.TimeToggleSelected {
+  font-weight: bold !important;
+  color: #000000 !important;
+  font-size: 14px !important;
+  background-color: #ffffff !important;
+}
+.TimeToggle {
+  color: #999999;
+  font-size: 14px;
+  text-align: center;
+  background-color: #f8f9fb;
+  width: 85px;
+  height: 25px;
+  border-left: 1px solid #d9d9d9;
+  line-height: 25px;
+}
