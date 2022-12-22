@@ -3,14 +3,18 @@ import './Summary.css';
 import PeriodToggle from '../components/PeriodToggle';
 import KPIbox from '../components/KPIbox';
 import Chart from '../components/Chart';
+import Toggle from '../components/Toggle';
 
 const Summary = () => {
+  const [selectedMarket, setSelectedMarket] = useState('AM Market');
   const [selectedKPI, setSelectedKPI] = useState('TRx');
   const [selectedPeriod, setSelectedPeriod] = useState('CW');
   const [selectedProduct, setSelectedProduct] = useState('Rollup');
 
-  const selectProductHandler = (product) => {
-    setSelectedProduct(product);
+  console.log(selectedMarket);
+  const handleMarketDropdown = (e) => {
+    setSelectedMarket(e.target.value);
+    console.log(selectedMarket);
   };
 
   return (
@@ -21,8 +25,9 @@ const Summary = () => {
             <div className="filter_wrapper">
               <div className="filter_text">Market</div>
               <div className="market_filter">
-                <select>
+                <select value={selectedMarket} onChange={handleMarketDropdown}>
                   <option value="AM-Market">AM Market</option>
+                  <option value="MD-Market">MD Market</option>
                 </select>
               </div>
               <div className="pop_up_filter">Filter</div>
@@ -157,67 +162,12 @@ const Summary = () => {
       <section id="performance_trend" class="ts_performance_trend">
         <div class="ts_pt_header">
           <span class="RSM_HeaderText" id="Summary_Chart_Header">
-            {`Competitive Trend - ${selectedKPI}`}
+            {`Competitive Trend - Product ${selectedProduct} - ${selectedKPI}`}
           </span>
-
-          <ul style={{ margin: '5px 10px 0 10px' }}>
-            <li
-              className={`${
-                selectedProduct === 'Rollup'
-                  ? 'Summary_PlotName TimeToggleSelected'
-                  : 'Summary_PlotName'
-              }`}
-              style={{
-                borderTopLeftRadius: '5px',
-                borderBottomLeftRadius: '5px',
-              }}
-              valueGet="Rollup"
-              id="SummaryRollupToggle"
-              onClick={selectProductHandler.bind(null, 'Rollup')}
-            >
-              Rollup
-            </li>
-            <li
-              className={`${
-                selectedProduct === 'Family'
-                  ? 'Summary_PlotName TimeToggleSelected'
-                  : 'Summary_PlotName'
-              }`}
-              style={{
-                borderTopTightRadius: '5px',
-                borderBottomRightRadius: '5px',
-              }}
-              valueGet="Family"
-              id="SummaryFamilyToggle"
-              onClick={selectProductHandler.bind(null, 'Family')}
-            >
-              Family
-            </li>
-          </ul>
-          <div style={{ margin: '5px 10px 0 0' }}>
-            <div
-              id="Summary_PerformanceChartMax"
-              class="Summary_Minimize_Black"
-            ></div>
-            <div
-              id="Summary_PerformanceChartMin"
-              class="Summary_Maximize_Black"
-              style={{ display: 'none' }}
-            ></div>
-          </div>
-          <div style={{ margin: '5px 10px 0 0' }}>
-            <div
-              id="rsm_ChartIcon2"
-              valueGet="Chart"
-              class="VisualType rsm_ChartIcon"
-            ></div>
-            <div
-              id="rsm_GridIcon2"
-              valueGet="Grid"
-              style={{ display: 'none' }}
-              class="VisualType rsm_GridIcon"
-            ></div>
-          </div>
+          <Toggle
+            onSelect={setSelectedProduct}
+            selectedProduct={selectedProduct}
+          />
         </div>
         <div id="SummaryTrendChart" class="Summary_TrendChart">
           <Chart />
