@@ -7,14 +7,17 @@ import Toggle from '../components/Toggle';
 
 const Summary = () => {
   const [selectedMarket, setSelectedMarket] = useState('AM Market');
+  const [value, setValue] = useState('Orange');
   const [selectedKPI, setSelectedKPI] = useState('TRx');
   const [selectedPeriod, setSelectedPeriod] = useState('CW');
   const [selectedProduct, setSelectedProduct] = useState('Rollup');
 
-  console.log(selectedMarket);
   const handleMarketDropdown = (e) => {
     setSelectedMarket(e.target.value);
-    console.log(selectedMarket);
+  };
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
   return (
@@ -49,7 +52,7 @@ const Summary = () => {
         <section className="kpi_section_inner_container">
           <div className="section_heading">
             <div className="section_heading_text">
-              <span>{`Performance Metrics - ${selectedPeriod}`}</span>
+              <span>{`Performance Metrics - ${selectedMarket} - ${selectedPeriod}`}</span>
             </div>
           </div>
           <section className="kpi_inner">
